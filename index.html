@@ -1,121 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>React Test</title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="example" class="container">
-      
-    </div>
-    <script type="text/babel">
-        class Field extends React.Component {
-          constructor(props) {
-            super(props);
-            this.state = {
-              tasks:[
-                
-              ]
-            };
-          };
-          add(text) {
-            var arr = this.state.tasks;
-            arr.push(this.refs.taskTxt.value);
-            this.setState({task: arr});
-          }
-          deleteBlock(i) {
-            var arr = this.state.tasks;
-            arr.splice (i, 1);
-            this.setState ({tasks:arr});
-          }
-          updateText(text, i) {
-            var arr = this.state.tasks;
-            arr[i] = text;
-            this.setState ({tasks: arr});
-          }
-          eachTask(item, i) {
-            return (
-              <Task key={i} index={i} update={this.updateText.bind(this)} deleteBlock={this.deleteBlock.bind(this)}>
-                {item}
-              </Task>
-            );
-          }
-          render() {
-            return (
-            <div className="field">
-              <input className="taskInput" ref="taskTxt" type="text" placeholder="Write the task..."/>
-              <button onClick={this.add.bind(this)} className="button buttonNew"><span>+</span></button>
-              {
-                this.state.tasks.map(this.eachTask.bind(this))
-              }
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div id="search">
+
+                </div>
             </div>
-            );
-          };
-        };
-        class Task extends React.Component {
-          constructor(props) {
-            super(props);
-            this.state = {edit:false};
-          }
+            <div class="row">
+                <div id="customers" class="col-9">
 
-          edit() {
-            this.setState({edit:true});
-          };
-          remove() {
-            this.props.deleteBlock(this.props.index);
-          };
-          save() {
-            this.props.update(this.refs.newTxt.value, this.props.index);
-            this.setState({edit:false});
-          };
-          rendNorm() {
-            return (
-              <div className="taskBox">
-                <div className="text">{this.props.children}</div>
-                <button onClick={this.edit.bind(this)} className="button buttonLight">Edit</button>
-                <button onClick={this.remove.bind(this)} className="button buttonRed">Delete</button>
-              </div>
-            );
-          }
-          rendEdit() {
-            return (
-              <div className="taskBox">
-                <textarea ref="newTxt" className='textPush' defaultValue={this.props.children}></textarea>
-                <button onClick={this.save.bind(this)} className="button buttonLight buttonSave">Save</button>
-              </div>
-            );
-          }
-          render() {
-            if (this.state.edit){
-              return this.rendEdit();
-            } else {
-              return this.rendNorm();
-            }
-          }
-        }
+                </div>
+            </div>
+            <div class="row">
+                <nav>
+                    <ul id="paginator" class="paginator pagination-sm">
 
-        ReactDOM.render (
-            <Field />, 
-            example
-        );
-    </script>
-
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      To set up a production-ready React build environment, follow these instructions:
-      * https://reactjs.org/docs/add-react-to-a-new-app.html
-      * https://reactjs.org/docs/add-react-to-an-existing-app.html
-
-      You can also use React without JSX, in which case you can remove Babel:
-      * https://reactjs.org/docs/react-without-jsx.html
-      * https://reactjs.org/docs/cdn-links.html
-    -->
-  </body>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="./js/index.js"></script>
 </html>

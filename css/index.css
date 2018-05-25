@@ -9,98 +9,34 @@ th{
 *::before {
   box-sizing: inherit;
 }
-.taskBox{
+#customers{
+  height: 200px;
+}
+#search{
+  padding: 15px;
+}
+.form-control:focus{
+  box-shadow: none;
+}
+.num {
+  display: none;
+}
+.paginator{
+  padding: 15px;
+}
+
+.paginator span{
+  padding: 3px 9px;
+  margin-left: 3px;
   background-color: #eee;
-  color: #222;
-  border: 1px solid #ccc;
-  padding: 0;
-  margin: 2px auto;
-  position: relative;
-  height: 125px;
-}
-.text{
-  font-size: 20px;
-  text-align: center;
-  padding: 15px 0;
-  margin: 3px;
-  min-height: 70px;
-  background-color: #fff;
-  text-transform: uppercase;
-}
-.button{
+  border: 1px solid #aaa;
+  border-radius: 2px;
   cursor: pointer;
-  width: 100px;
-  background-color: #dddddd;
-  padding: 10px 15px;
-  border: none;
 }
-.buttonLight{
-  font-weight: bold;
+.paginatorActive{
+  color: #aaa;
+  cursor: default;
+}
+.paginator span:hover{
   background-color: #ccc;
-  margin: 0 0 3px 3px;
-  position: absolute;
-  right: 103px;
-  bottom: 0px;
-}
-.buttonLight:hover{
-  background-color: #aaa;
-}
-.buttonRed{
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-  background-color: #ffdddd;
-}
-.buttonRed:hover{
-  background-color: #ff5555;
-}
-.buttonSave{
-  position: absolute;
-  left: 50%;
-  margin-left: -50px;
-}
-.buttonNew{
-  border: 1px solid #ccc;
-  width: 50px;
-  height: 50px;
-  color: #000;
-  font-weight: bold;
-  font-size: 40px;
-  padding: 0;
-  line-height: 1.2;
-}
-.buttonNew span{
-  position: relative;
-  top: -5px;
-}
-.buttonNew:hover{
-  background-color: #cccccc;
-}
-.buttonNew:focus{
-  box-shadow:none;
-  outline: none;
-}
-.field{
-  width: 400px;
-  margin: 0 auto;
-}
-.textPush{
-  width: 393px;
-  padding: 5px;
-  background-color: #fff;
-  min-height: 70px;
-  margin: 3px;
-  border: none;
-  resize: none;
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
-}
-.taskInput{
-  width: 350px;
-  height: 50px;
-  padding: 0;
-  padding-left: 5px;
-  vertical-align: top;
-  text-transform: uppercase;
 }
