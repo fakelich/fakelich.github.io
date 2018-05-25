@@ -205,9 +205,12 @@ function sorter(numCol, type) {
     for (var i = 0; i < 6; i++) {
         switch (numCol) {
             case i:
-                arrCounter[i] += 1;
-                sortCounter = arrCounter[i]%2;
-                break;
+              arrCounter[i] += 1;
+              sortCounter = arrCounter[i];
+              break;
+            default:
+              arrCounter[i] = 0;
+              break;
         }
     }
 
