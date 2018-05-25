@@ -151,7 +151,7 @@ table.insertBefore(thead,table.children[0]);
 
 var searchField = document.createElement("input");
 searchField.setAttribute("type","text");
-searchField.setAttribute("placeholder","Search by name...");
+searchField.setAttribute("placeholder","name or position...");
 searchField.setAttribute("id","searchField");
 searchField.className = "form-control";
 
@@ -165,8 +165,9 @@ function tableSearch() {
   var request = new RegExp(searchField.value);
   var searchResults = [];
   for (var i = 0; i < rowsArray.length; i++) {
-    var check = rowsArray[i].children[0].innerHTML;
-    if(request.test(check)){
+    var checkName = rowsArray[i].children[0].innerHTML;
+    var checkPos = rowsArray[i].children[1].innerHTML.toLowerCase();
+    if(request.test(checkName)||request.test(checkPos)){
       searchResults.push(rowsArray[i]);
     }
   }
