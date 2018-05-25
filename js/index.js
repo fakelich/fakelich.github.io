@@ -206,7 +206,7 @@ function sorter(numCol, type) {
         switch (numCol) {
             case i:
               arrCounter[i] += 1;
-              sortCounter = arrCounter[i];
+              sortCounter = arrCounter[i]%2;
               break;
             default:
               arrCounter[i] = 0;
